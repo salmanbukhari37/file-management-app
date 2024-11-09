@@ -9,7 +9,7 @@ interface Credentials {
 // Register a new user
 export const register = async (credentials: Credentials): Promise<any> => {
   const response = await axios.post(
-    `${process.env.REACT_APP_API_URL}/auth/register`,
+    `${process.env.REACT_APP_API_URL}auth/register`,
     credentials
   );
   return response;
@@ -18,7 +18,7 @@ export const register = async (credentials: Credentials): Promise<any> => {
 // Log in an existing user and save the token to localStorage
 export const login = async (credentials: Credentials): Promise<any> => {
   const response = await axios.post(
-    `${process.env.REACT_APP_API_URL}/auth/login`,
+    `${process.env.REACT_APP_API_URL}auth/login`,
     credentials
   );
   localStorage.setItem("token", response.data._token); // Save the JWT token to localStorage

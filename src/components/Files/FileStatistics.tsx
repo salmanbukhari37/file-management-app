@@ -46,7 +46,7 @@ const FileStatistics: React.FC<FileStatisticsProps> = ({ fileId }) => {
       {/* Image Preview */}
       <div className="mb-4">
         <img
-          src={`${process.env.REACT_APP_API_URL}/uploads/${stats.filename}`}
+          src={`${process.env.REACT_APP_API_URL}uploads/${stats.filename}`}
           alt={stats.filename}
           className="w-full h-64 object-cover rounded-lg shadow-sm"
         />

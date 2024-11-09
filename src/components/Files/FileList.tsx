@@ -76,7 +76,7 @@ const FileList: React.FC<FileListProps> = ({
               {/* Display Image */}
               <div className="flex items-center space-x-4 mb-4">
                 <img
-                  src={`${process.env.REACT_APP_API_URL}/uploads/${file.filename}`}
+                  src={`${process.env.REACT_APP_API_URL}uploads/${file.filename}`}
                   alt={file.filename}
                   className="w-24 h-24 object-cover rounded-md border border-gray-300"
                 />

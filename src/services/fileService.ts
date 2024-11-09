@@ -15,7 +15,7 @@ export const uploadFile = async (file: File, tags: string): Promise<void> => {
   formData.append("tags", tags);
 
   await axios.post(
-    `${process.env.REACT_APP_API_URL}/api/files/upload`,
+    `${process.env.REACT_APP_API_URL}api/files/upload`,
     formData,
     {
       headers: {
@@ -29,7 +29,7 @@ export const uploadFile = async (file: File, tags: string): Promise<void> => {
 // Fetch all files for the current user
 export const getFiles = async (): Promise<FileData[]> => {
   const response = await axios.get(
-    `${process.env.REACT_APP_API_URL}/api/files`,
+    `${process.env.REACT_APP_API_URL}api/files`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -42,7 +42,7 @@ export const getFiles = async (): Promise<FileData[]> => {
 // Generate a shareable link for a file
 export const generateShareLink = async (fileId: string): Promise<string> => {
   const response = await axios.post(
-    `${process.env.REACT_APP_API_URL}/api/share/generate-link/${fileId}`,
+    `${process.env.REACT_APP_API_URL}api/share/generate-link/${fileId}`,
     null,
     {
       headers: {
@@ -56,7 +56,7 @@ export const generateShareLink = async (fileId: string): Promise<string> => {
 // Get statistics for a specific file
 export const getFileStatistics = async (fileId: string): Promise<FileData> => {
   const response = await axios.get(
-    `${process.env.REACT_APP_API_URL}/api/files/stats/${fileId}`,
+    `${process.env.REACT_APP_API_URL}api/files/stats/${fileId}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
